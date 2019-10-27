@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "1a9a2a74-b9e9-458e-9585-f6438b872236",
+		"name": "Elastic Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "catalogo",
+			"item": [
+				{
+					"name": "Count Pessoas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/_count",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								"_count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Pessoa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/:pessoa_id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								":pessoa_id"
+							],
+							"variable": [
+								{
+									"key": "pessoa_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Pessoa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Maria Silva\",\r\n    \"interesses\": [\"pintura\", \"literatura\", \"teatro\"],\r\n    \"cidade\": \"Diamantina\",\r\n    \"formação\": \"Artes Plásticas\",\r\n    \"estado\": \"MG\",\r\n    \"país\": \"Brasil\"\r\n}"
+						},
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/:pessoa_id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								":pessoa_id"
+							],
+							"variable": [
+								{
+									"key": "pessoa_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll Pessoas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/_search",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Pessoa by Keyword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/_search?q=futebol",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "futebol"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Nome da Pessoa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"doc\": {\n    \"nome\": \"João Batista\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/:pessoa_id/_update",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								":pessoa_id",
+								"_update"
+							],
+							"variable": [
+								{
+									"key": "pessoa_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pessoa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/:pessoa_id/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								":pessoa_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "pessoa_id",
+									"value": "AW4JLhwTVG7JeGGl-9bF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HEAD Existe Pessoa",
+					"request": {
+						"method": "HEAD",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/:pessoa_id/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								":pessoa_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "pessoa_id",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Pessoa Inteira",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"João Silva\",\r\n    \"interesses\": [\r\n        \"futebol\",\r\n        \"música\",\r\n        \"literatura\"\r\n    ],\r\n    \"cidade\": \"São Paulo\",\r\n    \"formação\": \"Letras\",\r\n    \"estado\": \"SP\",\r\n    \"país\": \"Brasil\"\r\n}"
+						},
+						"url": {
+							"raw": "{{domain}}/catalogo/pessoas/:pessoa_id/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"catalogo",
+								"pessoas",
+								":pessoa_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "pessoa_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
